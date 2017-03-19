@@ -128,7 +128,7 @@ export class CrateQueryBuilder {
   getValuesQuery(column: string, limit?: number) {
     let query = `SELECT DISTINCT ${column} ` +
                 `FROM "${this.schema}"."${this.table}" ` +
-                `WHERE ${this.defaultTimeColumn} >= ? AND ${this.defaultTimeColumn} <= ?`;
+                `WHERE "${this.defaultTimeColumn}" >= ? AND "${this.defaultTimeColumn}" <= ?`;
 
     if (limit) {
       query += " LIMIT " + limit;

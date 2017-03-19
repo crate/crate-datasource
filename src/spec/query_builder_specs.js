@@ -196,7 +196,7 @@ describe('CrateQueryBuilder', function() {
     it('should build proper Crate SQL query', function(done) {
       var expected_query = "SELECT DISTINCT load " +
                            "FROM \"stats\".\"nodes\" " +
-                           "WHERE ts >= ? AND ts <= ?";
+                           "WHERE \"ts\" >= ? AND \"ts\" <= ?";
       var query = ctx.queryBuilder.getValuesQuery('load');
       expect(query).to.equal(expected_query);
       done();
@@ -204,7 +204,7 @@ describe('CrateQueryBuilder', function() {
 
     it('should add limit to query if it passed', function(done) {
       var expected_query = "SELECT DISTINCT load " +
-                           "FROM \"stats\".\"nodes\" WHERE ts >= ? AND ts <= ? " +
+                           "FROM \"stats\".\"nodes\" WHERE \"ts\" >= ? AND \"ts\" <= ? " +
                            "LIMIT 10";
       var query = ctx.queryBuilder.getValuesQuery('load', 10);
       expect(query).to.equal(expected_query);

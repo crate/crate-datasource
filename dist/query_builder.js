@@ -163,7 +163,7 @@ System.register(['lodash'], function(exports_1) {
                 CrateQueryBuilder.prototype.getValuesQuery = function (column, limit) {
                     var query = ("SELECT DISTINCT " + column + " ") +
                         ("FROM \"" + this.schema + "\".\"" + this.table + "\" ") +
-                        ("WHERE " + this.defaultTimeColumn + " >= ? AND " + this.defaultTimeColumn + " <= ?");
+                        ("WHERE \"" + this.defaultTimeColumn + "\" >= ? AND \"" + this.defaultTimeColumn + "\" <= ?");
                     if (limit) {
                         query += " LIMIT " + limit;
                     }
