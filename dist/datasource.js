@@ -212,7 +212,7 @@ System.register(['lodash', 'app/core/utils/datemath', './query_builder', './resp
                     });
                 };
                 CrateDatasource.prototype.getTimeFilter = function (timeFrom, timeTo) {
-                    return this.defaultTimeColumn + " >= '" + timeFrom + "' and " + this.defaultTimeColumn + " <= '" + timeTo + "'";
+                    return '"' + this.defaultTimeColumn + '" >= ' + timeFrom + ' AND "' + this.defaultTimeColumn + '" <= ' + timeTo;
                 };
                 CrateDatasource.prototype.getTagKeys = function (options) {
                     var query = this.queryBuilder.getColumnsQuery();

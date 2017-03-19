@@ -152,7 +152,7 @@ export class CrateDatasource {
   }
 
   getTimeFilter(timeFrom, timeTo) {
-    return this.defaultTimeColumn + " >= '" + timeFrom + "' and " + this.defaultTimeColumn + " <= '" + timeTo + "'";
+    return '"' + this.defaultTimeColumn + '" >= ' + timeFrom + ' AND "' + this.defaultTimeColumn + '" <= ' + timeTo;
   }
 
   getTagKeys(options) {
