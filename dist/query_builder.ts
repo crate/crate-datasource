@@ -38,7 +38,7 @@ export class CrateQueryBuilder {
 
     if (groupInterval) {
       // Manually aggregate by time interval, ie "SELECT floor(ts/10)*10 as time ..."
-      timeExp = `floor(${this.defaultTimeColumn}/${groupInterval})*${groupInterval}`;
+      timeExp = `floor("${this.defaultTimeColumn}"/${groupInterval})*${groupInterval}`;
       aggs = aggregateMetrics(aggs, 'avg');
     } else {
       timeExp = this.defaultTimeColumn;
